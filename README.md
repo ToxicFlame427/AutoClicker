@@ -1,4 +1,4 @@
-Here is my repository for my custom autoclicker: Auto Clicker MAX! You can download it on my <a href="https://toxicflame427.xyz/pages/software_pages/auto_clicker.html">website</a>. I had just made this as a great way to practice (or show off ;)  ) my skills. I would have to say that this project was really funto work on!
+Here is my repository for my custom autoclicker: Auto Clicker MAX! You can download it on my <a href="https://toxicflame427.xyz/pages/software_pages/auto_clicker.html">website</a>. I had just made this as a great way to practice (or show off ;)  ) my skills. I would have to say that this project was really fun to work on and I would like to create more things like this :)
 
 Made with C# and WinForms.
 
