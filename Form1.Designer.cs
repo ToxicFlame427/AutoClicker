@@ -34,11 +34,15 @@
             this.stopButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rightCheckbox = new System.Windows.Forms.CheckBox();
+            this.leftCheckbox = new System.Windows.Forms.CheckBox();
             this.groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.milisecondsBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.secondsBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minutesBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox
@@ -51,7 +55,7 @@
             this.groupBox.Controls.Add(this.label1);
             this.groupBox.Location = new System.Drawing.Point(12, 12);
             this.groupBox.Name = "groupBox";
-            this.groupBox.Size = new System.Drawing.Size(380, 105);
+            this.groupBox.Size = new System.Drawing.Size(246, 105);
             this.groupBox.TabIndex = 0;
             this.groupBox.TabStop = false;
             this.groupBox.Text = "Click Interval";
@@ -158,6 +162,41 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rightCheckbox);
+            this.groupBox1.Controls.Add(this.leftCheckbox);
+            this.groupBox1.Location = new System.Drawing.Point(264, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(129, 105);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Click Mode";
+            // 
+            // rightCheckbox
+            // 
+            this.rightCheckbox.AutoSize = true;
+            this.rightCheckbox.Location = new System.Drawing.Point(6, 46);
+            this.rightCheckbox.Name = "rightCheckbox";
+            this.rightCheckbox.Size = new System.Drawing.Size(77, 17);
+            this.rightCheckbox.TabIndex = 1;
+            this.rightCheckbox.Text = "Right Click";
+            this.rightCheckbox.UseVisualStyleBackColor = true;
+            this.rightCheckbox.Click += new System.EventHandler(this.checkboxChangedRight);
+            // 
+            // leftCheckbox
+            // 
+            this.leftCheckbox.AutoSize = true;
+            this.leftCheckbox.Checked = true;
+            this.leftCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.leftCheckbox.Location = new System.Drawing.Point(6, 22);
+            this.leftCheckbox.Name = "leftCheckbox";
+            this.leftCheckbox.Size = new System.Drawing.Size(70, 17);
+            this.leftCheckbox.TabIndex = 0;
+            this.leftCheckbox.Text = "Left Click";
+            this.leftCheckbox.UseVisualStyleBackColor = true;
+            this.leftCheckbox.Click += new System.EventHandler(this.checkboxChangedLeft);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,6 +204,7 @@
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(404, 182);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.stopButton);
             this.Controls.Add(this.startButton);
@@ -182,6 +222,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.secondsBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minutesBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -199,6 +241,9 @@
         private System.Windows.Forms.NumericUpDown minutesBox;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox rightCheckbox;
+        private System.Windows.Forms.CheckBox leftCheckbox;
     }
 }
 

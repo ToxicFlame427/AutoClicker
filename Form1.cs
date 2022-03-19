@@ -21,8 +21,8 @@ namespace AutoClicker
         //Mouse actions
         private const int MOUSEEVENTF_LEFTDOWN = 0x02;
         private const int MOUSEEVENTF_LEFTUP = 0x04;
-        //private const int MOUSEEVENTF_RIGHTDOWN = 0x08;
-        //private const int MOUSEEVENTF_RIGHTUP = 0x10;
+        private const int MOUSEEVENTF_RIGHTDOWN = 0x08;
+        private const int MOUSEEVENTF_RIGHTUP = 0x10;
 
         System.Timers.Timer timer = new System.Timers.Timer();
         Thread keyboardThread;
@@ -81,8 +81,18 @@ namespace AutoClicker
         private void clickMouse(object source, EventArgs e)
         {
             SetCursorPos(System.Windows.Forms.Cursor.Position.X, System.Windows.Forms.Cursor.Position.Y);
-            mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
-            mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+            //Check which clicking mode will be used
+            if (leftCheckbox.Checked)
+            {
+                mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
+                mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+            }
+
+            if (rightCheckbox.Checked)
+            {
+                mouse_event(MOUSEEVENTF_RIGHTDOWN, 0, 0, 0, 0);
+                mouse_event(MOUSEEVENTF_RIGHTUP, 0, 0, 0, 0);
+            }
         }
 
         //Run when the start button is clicked
@@ -120,6 +130,10 @@ namespace AutoClicker
                 minutesBox.Enabled = true;
                 secondsBox.Enabled = true;
                 milisecondsBox.Enabled = true;
+
+                //Enable the checkboxes
+                leftCheckbox.Enabled = true;
+                rightCheckbox.Enabled = true;
             });
 
             //Stop the timer from doing anything
@@ -139,6 +153,10 @@ namespace AutoClicker
                 minutesBox.Enabled = false;
                 secondsBox.Enabled = false;
                 milisecondsBox.Enabled = false;
+
+                //Disable the checkboxes
+                leftCheckbox.Enabled = false;
+                rightCheckbox.Enabled = false;
             });
 
             //Reset all timer values
@@ -171,6 +189,25 @@ namespace AutoClicker
         private void exitProgram(object sender, FormClosingEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        //These functions run whenever the corresponding checkbox is clicked
+        private void checkboxChangedLeft(object sender, EventArgs e)
+        {
+            Invoke((MethodInvoker)delegate
+            {
+                leftCheckbox.Checked = true;
+                rightCheckbox.Checked = false;
+            });
+        }
+
+        private void checkboxChangedRight(object sender, EventArgs e)
+        {
+            Invoke((MethodInvoker)delegate
+            {
+                leftCheckbox.Checked = false;
+                rightCheckbox.Checked = true;
+            });
         }
     }
 }
