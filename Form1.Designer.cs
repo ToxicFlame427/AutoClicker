@@ -71,6 +71,11 @@
             this.milisecondsBox.Name = "milisecondsBox";
             this.milisecondsBox.Size = new System.Drawing.Size(77, 20);
             this.milisecondsBox.TabIndex = 8;
+            this.milisecondsBox.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
             this.milisecondsBox.ValueChanged += new System.EventHandler(this.textChangedInBox);
             this.milisecondsBox.Click += new System.EventHandler(this.textChangedInBox);
             this.milisecondsBox.Enter += new System.EventHandler(this.textChangedInBox);
