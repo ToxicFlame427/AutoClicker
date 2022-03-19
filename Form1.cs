@@ -34,6 +34,9 @@ namespace AutoClicker
         {
             InitializeComponent();
 
+            //Create the initial calculated value for the timer interval by calling the textChangedBox function
+            textChangedInBox(null, null);
+
             //Start the thread searching for keyboard presses
             keyboardThread = new Thread(KeyboardListener);
             keyboardThread.SetApartmentState(ApartmentState.STA);
